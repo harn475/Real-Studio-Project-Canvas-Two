@@ -1,6 +1,8 @@
+// CREATIVE
+
 let textContent = "The canvas is bordered and divided horizontally and vertically into four equal parts with a black band. Each quarter has alternating parallel bands of white and color bands. Upper left: gray; upper right: yellow; lower left: red; lower right: blue.";
 let lines = [];
-let colorPicker, weightSlider, clearButton, undoButton;
+let colorPicker, weightSlider, clearButton, undoButton, linkButton;
 let drawing = false;
 let drawAreaSize = 600;
 let drawAreaX, drawAreaY;
@@ -20,7 +22,12 @@ function setup() {
   undoButton = createButton('Erase'); // changed to erase based off of function
   undoButton.position(120, 500);
   undoButton.mousePressed(() => lines.pop());
-  
+
+  // Create the link button
+  linkButton = createButton('View Wall Drawing #419');
+  linkButton.position(10, 540);
+  linkButton.mousePressed(() => window.open('https://massmoca.org/event/walldrawing419/', '_blank'));
+
   drawAreaX = windowWidth / 2;
   drawAreaY = (windowHeight - drawAreaSize) / 2;
 
